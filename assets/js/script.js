@@ -2,8 +2,14 @@ let table = document.querySelector(".t-body");
 
 let btn = document.querySelector(".btn-primary");
 
+let dltBtn = document.querySelector(".btn-danger")
+
 btn.addEventListener("click", function () {
   getPosts();
+});
+
+dltBtn.addEventListener("click", function () {
+  table.remove();
 });
 
 async function getPosts() {
