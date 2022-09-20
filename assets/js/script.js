@@ -2,15 +2,7 @@ let table = document.querySelector(".t-body");
 
 let btn = document.querySelector(".btn-primary");
 
-let dltBtn = document.querySelector(".btn-danger")
-
-btn.addEventListener("click", function () {
-  getPosts();
-});
-
-dltBtn.addEventListener("click", function () {
-  table.remove();
-});
+let dltBtn = document.querySelector(".btn-danger");
 
 async function getPosts() {
   let posts = await fetch("https://jsonplaceholder.typicode.com/comments");
@@ -25,3 +17,15 @@ async function getPosts() {
     `;
   });
 }
+
+function deleteBtn() {
+  table.innerHTML = "";
+}
+
+btn.addEventListener("click", function () {
+  getPosts();
+});
+
+dltBtn.addEventListener("click", function () {
+  deleteBtn();
+});
